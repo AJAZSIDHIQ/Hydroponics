@@ -20,7 +20,7 @@ int fan = 3;
 int tempThresh = 50;
 
 int VAL_PROBE = A0;
-int MOISTURE_LEVEL = 1000; // the value after the pump goes ON
+int WATER_LEVEL = 1000; // the value after the pump goes ON
 
 void setup() {
   Serial.begin(9600);     // initializing serail communication.
@@ -52,8 +52,8 @@ void loop() {
               digitalWrite(LED, LOW);             // If LDR is below threshold make LED OFF.
             }
        
-            int moisture = analogRead(VAL_PROBE);
-            Serial.println(moisture);
+            int wlevel = analogRead(VAL_PROBE);
+            Serial.println(wlevel);
             if(serialdata=='2' || moisture>908) {
               Serial.println(HIGH);
               digitalWrite(PUMP, HIGH);
